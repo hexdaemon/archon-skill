@@ -20,6 +20,8 @@ Archon is an open-source decentralized self-sovereign identity (SSI) system. Thi
 
 The public Archon node serves as a gateway to the decentralized identity network, hosting DIDs across multiple registries (Hyperswarm, BTC mainnet, BTC signet).
 
+**Important:** This skill provides **read-only** access to the public node (Gatekeeper API). Creating DIDs, signing documents, and managing vaults requires running your own local Archon node (Keymaster + Gatekeeper). This is by design - your private keys should never be managed by a third-party server.
+
 ## What is Archon?
 
 - **Decentralized Identifiers (DIDs):** `did:cid:<base32-cid>` format
@@ -187,6 +189,29 @@ fi
 ```bash
 curl -s "https://archon.technology" | grep -oP '"dids":\s*{[^}]+}' | jq -R 'fromjson'
 ```
+
+---
+
+## When You Need a Local Node
+
+The public node (via this skill) is perfect for:
+- ✅ Resolving DIDs (reading identity documents)
+- ✅ Verifying credentials issued by others
+- ✅ Exploring the network
+- ✅ Checking if DIDs exist
+
+You **need a local Archon node** for:
+- ❌ Creating your own DIDs
+- ❌ Issuing verifiable credentials
+- ❌ Signing documents with your DID
+- ❌ Managing encrypted vaults
+- ❌ Storing private identity data
+
+**Why local-only for these operations?**  
+Security. Your private keys (used to create DIDs and sign documents) should **never** be managed by a third-party server. A local node keeps your cryptographic identity under your complete control.
+
+**Install a local node:**  
+→ https://github.com/archetech/archon
 
 ---
 
