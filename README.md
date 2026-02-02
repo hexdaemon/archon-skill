@@ -2,6 +2,8 @@
 
 **Query the Archon decentralized identity network via public web APIs.**
 
+🔗 **[Install from ClawHub](https://www.clawhub.ai/santyr/archon-skill)** | 📦 **[GitHub](https://github.com/hexdaemon/archon-skill)**
+
 ---
 
 ## Files
