@@ -2,7 +2,7 @@
     "@context": "https://w3id.org/security/v2",
     "type": "RepoManifest",
     "issuer": "did:cid:bagaaierajrr7k6izcrdfwqxpgtrobflsv5oibymfnthjazkkokaugszyh4ka",
-    "created": "2026-02-02T17:25:13Z",
+    "created": "2026-02-02T17:27:53Z",
     "repository": "https://github.com/hexdaemon/hexmem",
     "files": [
         {
@@ -43,14 +43,14 @@
         },
         {
             "path": "./SKILL.md",
-            "sha256": "527122944e72ee47dcab3edd3d9db5c60e1aeba09d9be3d52cb2fe38c3c50292"
+            "sha256": "b243104f8c6b3d927ca75a492743a23b34f4cc000532f54b7547cd54e41fd77f"
         }
     ],
     "proof": {
         "type": "EcdsaSecp256k1Signature2019",
-        "created": "2026-02-02T17:25:15.645Z",
+        "created": "2026-02-02T17:27:55.938Z",
         "verificationMethod": "did:cid:bagaaierajrr7k6izcrdfwqxpgtrobflsv5oibymfnthjazkkokaugszyh4ka#key-1",
         "proofPurpose": "assertionMethod",
-        "proofValue": "x3FFuzFKsqGINK9_0MfpDis36uWp79NjkkeQwjYTvfUqF25AOcfPUzmP_TN98KWlf_gIcR7mjs9CH4FeVf-6gA"
+        "proofValue": "0x5yVqGL4pSv0HblhP-ok-ouToGqW4ZxpYRA0rhlObgje3OkeVj2LwA8UZF34TNR7P2NK_qWG-VyzusZdx6A1A"
     }
 }
