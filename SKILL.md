@@ -13,7 +13,7 @@ metadata:
 
 # Archon - Decentralized Identity Network
 
-Archon is an open-source decentralized self-sovereign identity (SSI) system. This skill provides full Archon capabilities including local node management, DID operations, credential issuance, vault management, and public network access.
+Archon is an open-source decentralized self-sovereign identity (SSI) system. **Recommended path (pre‑alpha): use the npm Keymaster CLI without running a local node.** Local node operations are advanced/experimental and should be used only if you need vaults or signing.
 
 ## Platform Support
 
@@ -36,7 +36,11 @@ Archon is an open-source decentralized self-sovereign identity (SSI) system. Thi
 
 ## Architecture
 
-**Local Archon Node:** `~/bin/archon` (Docker Compose stack)
+**Recommended (pre‑alpha):**
+- **Keymaster CLI** via npm (`npx @didcid/keymaster`) — no local node required
+- **Public Network** `https://archon.technology` for read‑only DID resolution
+
+**Local Archon Node (Advanced / Experimental):** `~/bin/archon` (Docker Compose stack)
 - **Keymaster** (`:4226`) - Wallet operations, DID creation, signing
 - **Gatekeeper** (`:4224`) - Public DID resolution, network gateway
 - **IPFS** (`:5001`) - Content-addressable storage
@@ -44,11 +48,21 @@ Archon is an open-source decentralized self-sovereign identity (SSI) system. Thi
 - **MongoDB/Redis** - State management
 - **Grafana** (`:3003`) - Metrics dashboard
 
-**Public Network:** `https://archon.technology`
-- Read-only access to public DIDs
-- Network exploration and statistics
+## Recommended Path (Pre‑Alpha)
 
-## Local Node Management
+**Use the npm package (Keymaster CLI) — no local Archon node required.**
+This is the safest path while the Archon node stack is still pre‑alpha.
+
+```bash
+# Install / use directly
+npx @didcid/keymaster list-ids
+npx @didcid/keymaster create-id --name "agent-name" --type agent
+```
+
+Local nodes are **advanced / experimental** and should be used only if you need
+vaults, signing, or on‑chain anchoring.
+
+## Local Node Management (Advanced / Experimental)
 
 ### Node Control
 
@@ -76,13 +90,13 @@ cd ~/bin/archon
 ### Configuration
 
 **Wallet location:** `~/bin/archon/data/keymaster/wallet.json` (encrypted)  
-**Passphrase:** `your-secure-passphrase`  
+**Passphrase:** Set via `$ARCHON_PASSPHRASE` environment variable or prompted interactively  
 **Config directory:** `~/.config/hex/archon/` (alternative wallet location)
 
 **Environment setup:**
 ```bash
 export ARCHON_CONFIG_DIR="$HOME/.config/hex/archon"
-export ARCHON_PASSPHRASE="your-secure-passphrase"
+export ARCHON_PASSPHRASE="your-wallet-passphrase"  # or leave unset to be prompted
 export ARCHON_GATEKEEPER_URL="http://localhost:4224"  # or https://archon.technology
 export ARCHON_WALLET_PATH="$HOME/bin/archon/data/keymaster/wallet.json"
 ```
@@ -443,7 +457,7 @@ cd ~/bin/archon && /snap/bin/docker compose logs -f keymaster  # Check logs
 
 **Wallet locked:**
 ```bash
-export ARCHON_PASSPHRASE="your-secure-passphrase"
+export ARCHON_PASSPHRASE="your-wallet-passphrase"
 # Then retry command
 ```
 

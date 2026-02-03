@@ -145,16 +145,16 @@ C:\Users\YourName\archon\docker-compose.yml
 
 ## Best Practice for Windows AI Agents
 
-**For full automation:**
+**Recommended (pre‑alpha):**
+1. Use keymaster CLI via npx (works everywhere)
+2. Use public network API for read-only
+3. No local node needed
+
+**Advanced / experimental (full automation):**
 1. Use WSL2 (best compatibility)
 2. Store config in `~/.config/archon` (Linux-style paths)
 3. Run Archon node in WSL2 Docker
 4. Scripts work unchanged
-
-**For lightweight operations:**
-1. Use keymaster CLI via npx (works everywhere)
-2. Use public network API for read-only
-3. No local node needed
 
 **For integration with Windows tools:**
 1. Use PowerShell scripts

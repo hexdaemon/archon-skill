@@ -8,14 +8,14 @@
 
 ## Platform Support
 
-✅ **Linux** - Full support (all operations)  
-✅ **macOS** - Full support (Docker Desktop)  
-⚠️ **Windows** - WSL2 recommended (see WINDOWS.md)
+✅ **All platforms (recommended):** Keymaster CLI via npm (`npx @didcid/keymaster`)  
+✅ **Linux/macOS:** Full support (local node optional)  
+⚠️ **Windows:** WSL2 recommended for local node (see WINDOWS.md)
 
-**Cross-platform operations:**
-- Public API queries (all platforms)
-- Keymaster CLI via npx (all platforms with Node.js)
-- Helper scripts (Linux/macOS/WSL2/Git Bash)
+**Cross-platform operations (no node required):**
+- Public API queries
+- Keymaster CLI via npx (Node.js only)
+- DID creation and management via CLI
 
 ---
 
@@ -74,7 +74,23 @@
 
 ---
 
-## Local Node Setup
+## Recommended Path (Pre‑Alpha)
+
+**Use the npm package (Keymaster CLI) — no local Archon node required.**
+This is the safest path while the Archon node stack is still pre‑alpha.
+
+```bash
+# Use directly
+npx @didcid/keymaster list-ids
+npx @didcid/keymaster create-id --name "agent-name" --type agent
+```
+
+Local nodes are **advanced / experimental** and should be used only if you need
+vaults, signing, or on‑chain anchoring.
+
+---
+
+## Local Node Setup (Advanced / Experimental)
 
 For full capabilities, run a local Archon node:
 
