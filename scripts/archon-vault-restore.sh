@@ -26,7 +26,7 @@ echo "Restoring from vault: $VAULT_NAME"
 echo "  Item: $ITEM_NAME"
 echo "  Output: $OUTPUT_PATH"
 
-keymaster get-vault-item "$VAULT_NAME" "$ITEM_NAME" "$OUTPUT_PATH"
+npx @didcid/keymaster get-vault-item "$VAULT_NAME" "$ITEM_NAME" "$OUTPUT_PATH"
 
 if [ -f "$OUTPUT_PATH" ]; then
     FILESIZE=$($STAT_SIZE "$OUTPUT_PATH")

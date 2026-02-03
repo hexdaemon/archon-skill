@@ -36,6 +36,6 @@ echo "Backing up to vault: $VAULT_NAME"
 echo "  File: $FILE_PATH ($FILESIZE bytes)"
 echo "  SHA256: $CHECKSUM"
 
-keymaster add-vault-item "$VAULT_NAME" "$FILE_PATH"
+npx @didcid/keymaster add-vault-item "$VAULT_NAME" "$FILE_PATH"
 
 echo "✓ Backup complete"
