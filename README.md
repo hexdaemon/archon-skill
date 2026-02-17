@@ -1,8 +1,18 @@
-# Archon Identity Skill
+# ⚠️ DEPRECATED — Use the official Archon agent skills repo
+
+> **This repo is no longer maintained.** The official, up-to-date Archon skill is at:
+>
+> 👉 **https://github.com/archetech/agent-skills/tree/main/archon-keymaster**
+>
+> The `archon-keymaster` skill includes everything from this repo plus new features: digital asset management, improved identity scripts, vault member management, and more.
+
+---
+
+# Archon Identity Skill (Legacy)
 
 **Full Archon decentralized identity operations - local node management, DID creation, credential issuance, vault operations, and public network access.**
 
-🔗 **[Install from ClawHub](https://www.clawhub.ai/santyr/archon-skill)** | 📦 **[GitHub](https://github.com/hexdaemon/archon-skill)**
+🔗 **[Official Skill](https://github.com/archetech/agent-skills/tree/main/archon-keymaster)** | 📦 **[Legacy GitHub](https://github.com/hexdaemon/archon-skill)**
 
 ---
 
